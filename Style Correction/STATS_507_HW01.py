@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import math
+import time
+import statistics
+from tabulate import tabulate
+import numpy as np
+from scipy import stats
 # # Question 0 - Markdown warmup
 
 # ##### This is _question 0_ for [problem set 1](https://jbhender.github.io/Stats507/F21/ps/ps1.html) of [Stats 507](https://jbhender.github.io/Stats507/F21/)
@@ -40,6 +46,10 @@ def fib_rec(n):
         return 1
     return fib_rec(n - 2) + fib_rec(n - 1)
 
+# test 1:
+num_lis = [7, 11, 13]
+for num in num_lis:
+    print(fib_rec(num))
 
 # b.
 
@@ -59,7 +69,11 @@ def fib_for(n):
             fib_val = fib_0 + fib_1
             fib_0 = fib_1
             fib_1 = fib_val
-        return fib_val    
+        return fib_val   
+   
+# test 2:
+for num in num_lis:
+    print(fib_for(num))
 
 
 # c.
@@ -83,6 +97,10 @@ def fib_whl(n):
             i = i + 1
     return fib_val
 
+# test 3:
+for num in num_lis:
+    print(fib_whl(num))
+
 
 # d.
 
@@ -90,10 +108,14 @@ def fib_whl(n):
 
 
 # rounding version:
-import math
+
 def fib_rnd(n):
     phi = (1 + math.sqrt(5))/2
     return round(phi**n / math.sqrt(5))
+
+# test 4:
+for num in num_lis:
+    print(fib_rnd(num))
 
 
 # e.
@@ -106,6 +128,10 @@ def fib_flr(n):
     phi = (1 + math.sqrt(5))/2
     return math.floor(phi**n / math.sqrt(5) + 1/2)
 
+# test 5:
+for num in num_lis:
+    print(fib_flr(num))
+
 
 # f.
 
@@ -113,9 +139,8 @@ def fib_flr(n):
 
 
 # comparison of median computation time of functions above:
-import time
-import statistics
-from tabulate import tabulate
+
+
 n_seq = [5*i for i in range(11)]
 func_list = [fib_rec, fib_for, fib_whl, fib_rnd, fib_flr]
 
@@ -203,8 +228,7 @@ prin_fir_n_pascal_row(15)
 # In[2]:
 
 
-import numpy as np
-from scipy import stats
+
 
 # function to give point and interval estimate of 
 def mean_CI_esti(data, CI, ci_format = 'θ̂[XX%CI:(θ̂L,θ̂U)]'):
@@ -334,7 +358,7 @@ def binomial_conf_intval(data, CI, method, ci_format = 'θ̂[XX%CI:(θ̂L,θ̂U)
 # Choose the number of decimals to display carefully to emphasize differences. 
 # For each confidence level, which method produces the interval with the smallest width
 
-from tabulate import tabulate
+
 data_arr = np.ones(90)
 data_arr[:48] = 0.0
 np.random.shuffle(data_arr)
