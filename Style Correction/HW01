@@ -1,7 +1,11 @@
-# The following is GSI's feedback on my first hw:
-# Q0: -3 for not provide both raw and formatted versions. 
-# -1 for most tilt texts.
-# Q1: -5 for missing tests. -3 for interrupted process and no 
-# table output
-# Overall: -10 for not provide docstring in all functions.
-# -2 for all imports aren't collected together near the start
+The following is GSI's feedback on my first hw:
+1. Q0: -3 for not provide both raw and formatted versions. 
+2. -1 for most tilt texts.
+3. Q1: -5 for missing tests.
+4. -3 for interrupted process and no 
+  table output
+5. Overall: -10 for not provide docstring in all functions.
+6. -2 for all imports aren't collected together near the start
+
+I will make correction for comment 3, 6
+
